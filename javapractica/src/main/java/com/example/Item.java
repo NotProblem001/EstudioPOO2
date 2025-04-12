@@ -31,6 +31,10 @@ public class Item {
         }
     }
 
+    public void Use() {
+        System.out.println("Using item: " + name);
+    }
+
     
 
 }

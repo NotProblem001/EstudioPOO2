@@ -12,6 +12,12 @@ public class Weapon extends Item{
         return damage;
     }
 
+    @Override
+    public void Use() {
+        System.out.println("Using weapon: " + getName()  + " with damage: " + damage);
+    }
 
-
+    public void Use(int bonus){
+        System.out.println("Using weapon: " + getName()  + " with damage: " + (damage + bonus));
+    }
 }
