@@ -17,8 +17,4 @@ public class Potion extends Item{
         System.out.println("Using potion: " + getName()  + " with healing: " + healing);
     }
 
-    public void Use(int bonus){
-        System.out.println("Using potion: " + getName()  + " with healing: " + (healing + bonus));
-    }
-
 }

@@ -1,6 +1,6 @@
 package com.example;
 
-public class Item {
+public abstract class Item {
 
     private String name;
     private int value;
@@ -31,9 +31,7 @@ public class Item {
         }
     }
 
-    public void Use() {
-        System.out.println("Using item: " + name);
-    }
+    public abstract void Use();
 
     
 

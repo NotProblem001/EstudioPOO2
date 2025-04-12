@@ -21,4 +21,11 @@ public class Inventory {
             System.out.println("Invalid index. Cannot use item.");
         }
     }
+
+    public void showInventory() {
+        System.out.println("Inventory : ");
+        for (int i = 0; i < items.size(); i++) {
+            System.out.println("Item " + i + ": " + items.get(i).getName());
+        }
+    }
 }
