@@ -13,5 +13,8 @@ public class Main {
         healthPotion1.Use();
         
         inventory1.addItem(sword1);
+        inventory1.addItem(healthPotion1);
+        inventory1.UserItem(0);
+        inventory1.UserItem(1);
     }
 }
