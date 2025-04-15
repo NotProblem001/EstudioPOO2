@@ -4,17 +4,26 @@ import java.util.ArrayList;
 
 public class Inventory {
     private ArrayList<Item> items;
-    //private int limit = 2;
+    private int limit;
 
-    public Inventory() {
+    public Inventory(int limit) {
         items = new ArrayList<Item>();
-        //System.out.println("Inventory created with a limit of " + limit + " items.");
+        this.limit = limit;
+    }
 
+    public int getLimit() {
+        return limit;
     }
 
     public void addItem(Item item) {
         items.add(item);
         System.out.println("Added item: " + item.getName() + " to inventory.");
+        if (items.size() > limit) {
+            System.out.println("Inventory limit exceeded. Cannot add more items.");
+            items.remove(item); // Remove the item if limit is exceeded
+        } else {
+            System.out.println("Item added successfully. Current inventory slot: " + items.size());
+        }
     }
 
     public void removeItem(int index) {
@@ -33,17 +42,7 @@ public class Inventory {
             System.out.println("Invalid index. Cannot use item.");
         }
     }
-
-    /* 
-    public void LimitInventory(int limit) {
-        if (items.size() > limit) {
-            System.out.println("Inventory limit exceeded. Cannot add more items.");
-        } else {
-            System.out.println("Inventory is within the limit.");
-        }
-    }
-    */
-
+    
     public void showInventory() {
         System.out.println("Inventory : ");
         for (int i = 0; i < items.size(); i++) {
