@@ -11,7 +11,7 @@ public class Main {
         Inventory inventory1 = new Inventory(2);
         Character character1 = new Character("EGGKing",100,inventory1);
         /*Character character2 = new Character("EGGQueen", 100, null);*/
-        Npc npc1 = new Npc(50);
+        Npc npc1 = new Npc("aweonaito",50);
         
         System.out.println("*----------*Objetos*----------*");
         weapon2.Equip();
