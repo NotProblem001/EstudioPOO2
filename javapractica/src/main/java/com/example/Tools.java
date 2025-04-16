@@ -21,6 +21,7 @@ public class Tools extends Item{
     @Override
     public void Use() {
         System.out.println("Using tool: " + getName() + " of type: " + type + " with durability: " + durability);
+        durability--;
     }
 
 }

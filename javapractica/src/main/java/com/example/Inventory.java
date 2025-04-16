@@ -4,25 +4,35 @@ import java.util.ArrayList;
 
 public class Inventory {
     private ArrayList<Item> items;
-    private int limit;
+    private int capacityLimit;
+    private int actualCapacity;
 
-    public Inventory(int limit) {
+    public Inventory(int capacityLimit) {
         items = new ArrayList<Item>();
-        this.limit = limit;
+        this.capacityLimit = capacityLimit;
+        this.actualCapacity = 0;
     }
 
-    public int getLimit() {
-        return limit;
+    public int getCapacityLimit() {
+        return capacityLimit;
+    }
+
+    public void setCapacityLimit(int limit){
+        if(capacityLimit > 0){
+            this.capacityLimit = limit;
+        } else {
+            System.out.println("Capacity limit must be greater than 0.");
+        }
     }
 
     public void addItem(Item item) {
-        items.add(item);
-        System.out.println("Added item: " + item.getName() + " to inventory.");
-        if (items.size() > limit) {
-            System.out.println("Inventory limit exceeded. Cannot add more items.");
-            items.remove(item); // Remove the item if limit is exceeded
-        } else {
-            System.out.println("Item added successfully. Current inventory slot: " + items.size());
+        if(actualCapacity < capacityLimit){
+            items.add(item);
+            actualCapacity ++;
+            System.out.println("Added item :" + item.getName());
+            System.out.println("Your actual capacity is :" + actualCapacity + " of " + capacityLimit);
+        }else{
+            System.out.println("You have no more space remaining in your inventory");
         }
     }
 
@@ -53,5 +63,9 @@ public class Inventory {
     public int getItemCount() {
         System.out.println("Total items in inventory: " + items.size());
         return items.size(); 
+    }
+
+    public ArrayList<Item> getItems(){
+        return items;
     }
 }
