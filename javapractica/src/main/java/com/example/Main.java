@@ -23,21 +23,13 @@ public class Main {
         
         System.out.println("~~~~ADD~~~~");
         inventory1.addItem(weapon1);
-        inventory1.addItem(healthPotion1);
         inventory1.addItem(weapon2);
+        inventory1.addItem(healthPotion1);
         
         System.out.println("~~~~REMOVE~~~~");
-        inventory1.removeItem(0);
-        inventory1.removeItem(1);
-
-
-        // Añadir para ejemplo
-        inventory1.addItem(weapon1);
-        inventory1.addItem(healthPotion1);
+        
         
         System.out.println("~~~~USE~~~~");
-        inventory1.UseItem(0);
-        inventory1.UseItem(1);
         
         System.out.println("*----------*Personaje*----------*");
         character1.Attack(npc1);
@@ -46,12 +38,12 @@ public class Main {
         System.out.println("~~~~SHOW~~~~");        
         inventory1.showInventory();
         inventory1.getItemCount();
+        
+        //Menu de combate por turnos
+        System.out.println("*----------*Combate*----------*");
+        Combat combat = new Combat(character1, npc1);
+        combat.CombatStart();
 
-        inventory1.removeItem(0);
-        
-        inventory1.showInventory();
-        inventory1.getItemCount();
-        
         System.out.println("*----------*Fin*----------*");
 
     }

@@ -1,6 +1,6 @@
 package com.example;
 
-public class Character extends LivingEntity{
+public class Character extends LivingEntity {
     private String name;
     private Inventory inventory;
     private Equipable equippable; 
@@ -16,12 +16,16 @@ public class Character extends LivingEntity{
         return name;
     }
 
-    public void setInventory(Inventory inventory){
-        this.inventory = inventory;
-    }
-
     public void setName(String name) {
         this.name = name;
+    }
+    
+    public Inventory getInventory() {
+        return inventory;
+    }
+    
+    public void setInventory(Inventory inventory){
+        this.inventory = inventory;
     }
 
     public void setEquippable(int id){
@@ -34,13 +38,15 @@ public class Character extends LivingEntity{
             System.out.println("The object "+ item.getName() +" is not equippable");
             return;
         }
-        System.out.println("No item found "+id+"in the inventory");
+        System.out.println("No item found "+ id + " in the inventory");
     }
 
     @Override
     public void Attack(LivingEntity enemyEntity){
         enemyEntity.ReceiveDamage(10);
     }
+
+    
 
 
 }
